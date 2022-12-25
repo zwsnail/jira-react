@@ -7,9 +7,9 @@ import { LoginScreen } from "screens/login";
 function App() {
   return (
     <div className="App">
-      <ProjectListScreen />
+      {/* <ProjectListScreen /> */}
       {/* <TsReactTest /> */}
-      {/* <LoginScreen /> */}
+      <LoginScreen />
     </div>
   );
 }
