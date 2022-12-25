@@ -29,8 +29,8 @@ export const List = ({ list, users }: ListProps) => {
                     就会是 undefined，会报错，加个？就不会报错 
                     找到 user 之后 .name */}
             <td>
-              {Array.from(users).find((user) => user.id === project.personId)
-                ?.name || "未知"}
+              {users.find((user) => user.id === project.personId)?.name ||
+                "未知"}
             </td>
           </tr>
         ))}

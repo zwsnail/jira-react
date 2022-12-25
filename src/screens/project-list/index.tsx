@@ -1,6 +1,6 @@
+import { useState, useEffect } from "react";
 import { SearchPanel } from "./search-panel";
 import { List } from "./list";
-import { useState, useEffect } from "react";
 import { cleanObject, useMount, useDebounce } from "../../utils";
 
 import * as qs from "qs";
@@ -13,7 +13,7 @@ export const ProjectListScreen = () => {
     personId: "",
   });
   const debounceParam = useDebounce(param, 200);
-  const [users, setUsers] = useState({});
+  const [users, setUsers] = useState([]);
 
   const [list, setList] = useState([]);
   //当param变化时，重新获取 URL
@@ -39,8 +39,8 @@ export const ProjectListScreen = () => {
 
   return (
     <div>
-      {/* <SearchPanel param={param} setParam={setParam} users={users} />
-        <List list={list} setList={setList} users={users} /> */}
+      <SearchPanel param={param} setParam={setParam} users={users} />
+      <List list={list} users={users} />
     </div>
   );
 };
